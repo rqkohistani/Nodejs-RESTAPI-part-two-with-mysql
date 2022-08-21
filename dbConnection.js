@@ -1,3 +1,4 @@
+// How to connect to a database using Node.js following the below link.
 // https://www.youtube.com/watch?v=7S_tz1z_5bA
 import mysql from 'mysql2';
 
