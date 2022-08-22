@@ -1,0 +1,58 @@
+{
+  "name": "build-a-secure-node-js-rest-api-part-two-with-mysql",
+  "version": "1.0.0",
+  "description": "Build a Secure Node js REST API template",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node -r dotenv/config server.js",
+    "devStart": "nodemon --experimental-modules --es-module-specifier-resolution=node server2.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rqkohistani/Build-a-Secure-Node-js-REST-API-part-two-with-mysql.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rqkohistani/Build-a-Secure-Node-js-REST-API-part-two-with-mysql/issues"
+  },
+  "homepage": "https://github.com/rqkohistani/Build-a-Secure-Node-js-REST-API-part-two-with-mysql#readme",
+  "dependencies": {
+    "ajv": "^8.11.0",
+    "ajv-formats": "^2.1.1",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "ecdsa-sig-formatter": "^1.0.11",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express-session": "^1.17.2",
+    "lodash": "^4.17.21",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/eslint-parser": "^7.12.1",
+    "@babel/node": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/register": "^7.12.1",
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^2.5.1"
+  }
+}
