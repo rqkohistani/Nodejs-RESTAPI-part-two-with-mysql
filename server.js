@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import routes from './routes';
 
-const port = process.env.DEFAULT_DB_PORT || 4000;
+const port = process.env.PORT || 4000;
 const app = express();
 
 const config = () => {
@@ -14,11 +14,11 @@ const config = () => {
 };
 
 const serve = async () => {
-  app.use('/api/v2/', routes);
+  app.use('/api/v2/', routes());
 
   app.listen(port, () => {
     // eslint-disable-next-line no-console
-    console.log(`Server is up on port ${port}`, routes);
+    console.log(`Server is up on port ${port}`);
   });
 };
 
