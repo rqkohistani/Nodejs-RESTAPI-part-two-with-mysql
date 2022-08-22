@@ -1,26 +1,30 @@
 import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import routes from './routes';
 
-import con from './dbConnection';
-
+const port = process.env.DEFAULT_DB_PORT || 4000;
 const app = express();
 
-app.use(express.json());
+const config = () => {
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
+  app.use(express.json());
+  app.use(cors());
+};
 
-const port = process.env.PORT || 3000;
-app.get('/api/v2/users', async (req, res) => {
-  try {
-    const users = await con.promise().query('SELECT * FROM users');
-    if (!users[0]) {
-      res.status(404).send('No users found');
-      return;
-    }
-    res.send(users[0]);
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
+const serve = async () => {
+  app.use('/api/v2/', routes);
 
-app.listen(port, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Server is up on port ${port}`);
-});
+  app.listen(port, () => {
+    // eslint-disable-next-line no-console
+    console.log(`Server is up on port ${port}`, routes);
+  });
+};
+
+const init = async () => {
+  config();
+  await serve();
+};
+
+init();
