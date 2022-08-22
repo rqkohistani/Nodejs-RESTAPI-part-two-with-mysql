@@ -2,13 +2,12 @@
 // https://www.youtube.com/watch?v=7S_tz1z_5bA
 import mysql from 'mysql2';
 
-// create the connection to database
 const con = mysql.createConnection({
-  host: 'localhost',
-  port: 3306,
-  user: 'root',
-  password: 'password',
-  database: 'secureNodeJsRestAPIsDB_partTwo_v2',
+  host: process.env.DEFAULT_MYSQL_HOST,
+  port: process.env.DEFAULT_MYSQL_PORT,
+  user: process.env.DEFAULT_MYSQL_NAME,
+  password: process.env.DEFAULT_MYSQL_PASSWORD,
+  database: process.env.DEFAULT_MYSQL_DATABASE,
 });
 
 con.connect((err) => {
