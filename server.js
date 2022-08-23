@@ -1,7 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import routes from './routes';
+import routes, { notFoundRoute } from './routes';
+import errorHandler from './errorHandler';
 
 const port = process.env.PORT || 4000;
 const app = express();
@@ -15,6 +16,8 @@ const config = () => {
 
 const serve = async () => {
   app.use('/api/v2/', routes());
+  app.use(notFoundRoute);
+  app.use(errorHandler);
 
   app.listen(port, () => {
     // eslint-disable-next-line no-console
