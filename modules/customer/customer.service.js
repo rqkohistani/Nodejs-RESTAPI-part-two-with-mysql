@@ -1,3 +1,4 @@
+import bcrypt from 'bcrypt';
 import con from '../../dbConnection';
 
 // TODO: update the customer's updateAt field when updating a customer
@@ -16,14 +17,27 @@ const getCustomer = async (id) => {
 
 const createCustomer = async (customer) => {
   const query = 'INSERT INTO customers SET ?';
-  const newCustomer = await con.promise().query(query, customer);
-  return newCustomer;
+  const newCustomer = {
+    ...customer,
+    password: await bcrypt.hash(customer.password, 10),
+  };
+  const data = await con.promise().query(query, [newCustomer]);
+  return data;
 };
 
-const updateCustomer = async (customerId, customer) => {
+const updateCustomer = async (customerId, upadateCustomer) => {
   const query = 'UPDATE customers SET ? WHERE id = ?';
-  const updatedCustomer = await con.promise().query(query, [customer, customerId]);
-  return updatedCustomer;
+  const oldCustomer = await getCustomer(customerId);
+  if (oldCustomer) {
+    const updateCustomer = {
+      ...upadateCustomer,
+      password: await bcrypt.hash(upadateCustomer.password, 10),
+      updatedAt: new Date(),
+    };
+    const data = await con.promise().query(query, [updateCustomer, customerId]);
+    return data;
+  }
+  return null;
 };
 
 const deleteCustomer = async (id) => {
