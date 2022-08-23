@@ -28,6 +28,10 @@ const getDerivedError = (error) => {
   if (databaseErrors) return databaseErrors;
   // if (error.message) return { status: 400, message: error.message };
   if (error.message)
+    // return {
+    //   status: 400,
+    //   message: error.message,
+    // };
     return {
       status: 400,
       message: `${capitalizeFirstLetter(error.message)} errno: ${error.errno} sqlState: ${
