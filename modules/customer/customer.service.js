@@ -29,12 +29,12 @@ const updateCustomer = async (customerId, upadateCustomer) => {
   const query = 'UPDATE customers SET ? WHERE id = ?';
   const oldCustomer = await getCustomer(customerId);
   if (oldCustomer) {
-    const updateCustomer = {
+    const customerData = {
       ...upadateCustomer,
       password: await bcrypt.hash(upadateCustomer.password, 10),
       updatedAt: new Date(),
     };
-    const data = await con.promise().query(query, [updateCustomer, customerId]);
+    const data = await con.promise().query(query, [customerData, customerId]);
     return data;
   }
   return null;
