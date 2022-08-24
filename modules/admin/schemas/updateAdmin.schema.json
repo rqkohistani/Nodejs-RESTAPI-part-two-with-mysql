@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer" },
+    "name": { "type": "string", "minLength": 1 },
+    "email": { "type": "string", "format": "email" },
+    "userRole": { "enum": ["admin", "user"] },
+    "password": { "type": "string", "minLength": 8 }
+  },
+  "additionalProperties": false,
+  "required": ["password", "userRole"],
+  "anyOf": [{ "required": ["name"] }, { "required": ["email"] }]
+}
