@@ -3,8 +3,6 @@
 import { DEFAULT_ERROR } from './constants';
 import { capitalizeFirstLetter, indexOfEnd } from './utils/helper.util';
 
-// create database errors with mysql workbench error codes and messages
-
 const databaseErrors = {
   1062: 'Duplicate entry',
   1452: 'Cannot add or update a child row: a foreign key constraint fails',
@@ -26,17 +24,10 @@ const getDerivedError = (error) => {
 
   const databaseErrors = getDbError(error);
   if (databaseErrors) return databaseErrors;
-  // if (error.message) return { status: 400, message: error.message };
   if (error.message)
-    // return {
-    //   status: 400,
-    //   message: error.message,
-    // };
     return {
       status: 400,
-      message: `${capitalizeFirstLetter(error.message)} errno: ${error.errno} sqlState: ${
-        error.sqlState
-      } with provided already exists.`,
+      message: `${capitalizeFirstLetter(error.message)}.`,
     };
 
   return DEFAULT_ERROR;

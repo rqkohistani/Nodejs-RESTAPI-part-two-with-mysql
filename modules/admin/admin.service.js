@@ -56,6 +56,12 @@ const updateAdmin = async (adminId, updateAdmin) => {
   return null;
 };
 
+export const getAdminByEmail = async (email) => {
+  const query = 'SELECT * FROM admins WHERE email = ?';
+  const [rows] = await con.promise().query(query, [email]);
+  return rows;
+};
+
 const adminService = {
   createAdmin,
   getAllAdmins,

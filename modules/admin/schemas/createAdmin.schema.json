@@ -8,7 +8,7 @@
     "name": { "type": "string", "minLength": 1 },
     "email": { "type": "string", "format": "email" },
     "password": { "type": "string", "minLength": 8 },
-    "userRole": { "enum": ["admin", "user"] }
+    "userRole": { "enum": ["superAdmin","admin", "user"] }
   },
   "additionalProperties": false,
   "required": ["name", "email", "password", "userRole"]

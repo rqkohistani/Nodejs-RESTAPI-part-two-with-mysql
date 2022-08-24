@@ -4,7 +4,7 @@
     "id": { "type": "integer" },
     "name": { "type": "string", "minLength": 1 },
     "email": { "type": "string", "format": "email" },
-    "userRole": { "enum": ["admin", "user"] },
+    "userRole": { "enum": ["superAdmin","admin", "user"] },
     "password": { "type": "string", "minLength": 8 }
   },
   "additionalProperties": false,
