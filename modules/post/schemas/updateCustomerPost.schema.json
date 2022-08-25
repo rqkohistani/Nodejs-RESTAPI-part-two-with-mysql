@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "customerId": { "type": "integer" },
+    "title": {
+      "type": "string",
+      "minLength": 2
+    },
+    "body": { "type": "string", "minLength": 5 }
+  },
+  "additionalProperties": false,
+  "required": ["customerId", "title", "body"]
+}
