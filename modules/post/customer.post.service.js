@@ -35,8 +35,15 @@ const createPostByCustomerId = async (customerId, postData) => {
 
 const deletePost = async (customerId, postId) => {
   const sql = 'DELETE FROM posts WHERE id = ? AND customerId = ?';
-  const [results] = await con.promise().query(sql, [postId, customerId]);
-  return results;
+  const getCustomer = await customerService.getCustomer(customerId);
+  const getPost = await getPostById(postId);
+  const checkAll = Promise.all([getCustomer, getPost]);
+  const [customer, post] = await checkAll;
+  if (customer && post) {
+    const [data] = await con.promise().query(sql, [postId, customerId]);
+    return data;
+  }
+  return null;
 };
 
 const updatePost = async (customerId, postId, postData) => {
