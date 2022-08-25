@@ -1,15 +1,6 @@
 import { HttpError } from '../../errors';
 import customerPostService from './customer.post.service';
 
-const getAllPosts = async (req, res, next) => {
-  try {
-    const posts = await customerPostService.getAllPosts();
-    res.status(200).send(posts);
-  } catch (error) {
-    next(new HttpError(error.message, 500));
-  }
-};
-
 const getPostById = async (req, res, next) => {
   try {
     const postId = parseInt(req.query.postId, 10);
@@ -70,7 +61,6 @@ const updatePost = async (req, res, next) => {
 };
 
 const customerPostController = {
-  getAllPosts,
   getPostById,
   getPostByCustomerId,
   createPostByCustomerId,
@@ -80,4 +70,4 @@ const customerPostController = {
 
 export default customerPostController;
 
-export { getAllPosts, getPostById, getPostByCustomerId, createPostByCustomerId, deletePost, updatePost };
+export { getPostById, getPostByCustomerId, createPostByCustomerId, deletePost, updatePost };
