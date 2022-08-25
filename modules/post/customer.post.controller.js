@@ -40,7 +40,8 @@ const deletePost = async (req, res, next) => {
     const postId = parseInt(req.params.postId, 10);
     const customerId = parseInt(req.body.customerId, 10);
     const deletedPost = await customerPostService.deletePost(customerId, postId);
-    if (!deletedPost) throw new HttpError(404, 'Post not found');
+    if (deletedPost.affectedRows === 0) throw new HttpError(404, 'Post or customer not found');
+    // if (!deletedPost) throw new HttpError(404, 'Post not found');
     res.status(200).json({ message: 'Post deleted', database: deletedPost });
   } catch (error) {
     next(error);
