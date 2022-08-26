@@ -2,7 +2,7 @@ import rolesAndPermissions from '../../roles.json';
 
 const checkPermission = async (req, res, next) => {
   const role = req.currentAdmin?.userRole;
-  if (['superAdmin', 'admin', 'user'].includes(role)) return next(); // superAdmin, admin  and have access to certain routes
+  if (['superAdmin', 'admin'].includes(role)) return next(); // superAdmin, admin have access to all routes
 
   const requiredPermission = `${req.method}${req.baseUrl}${req.route?.path}`;
 
