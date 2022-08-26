@@ -1,20 +1,16 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { HttpError } from '../../errors';
-import adminService, { getAdminByEmail } from '../admin/admin.service';
+import adminService from '../admin/admin.service';
 import { AUTH_DURATION_MS } from '../../constants';
 
-const login = async (email, password) => {
-  const admin = await getAdminByEmail(email);
-  if (admin.length === 0) throw new HttpError(401, 'Invalid email or password');
-  const isPasswordValid = bcrypt.compareSync(password, admin[0].password);
-  if (!isPasswordValid) throw new HttpError(400, 'Invalid email or password');
-  delete admin[0].password;
+const comparePassword = async (password, hash) => bcrypt.compareSync(password, hash);
 
-  const token = jwt.sign({ id: admin[0].id }, process.env.APPSETTING_JWT_SECRET, {
+const generateToken = async (admin) => {
+  const token = jwt.sign({ id: admin.id }, process.env.APPSETTING_JWT_SECRET, {
     expiresIn: AUTH_DURATION_MS,
   });
-  return { token, admin };
+  return token;
 };
 
 const getAdminFromAuthToken = async (authToken) => {
@@ -31,7 +27,8 @@ const getAdminFromAuthToken = async (authToken) => {
 };
 
 const authService = {
-  login,
+  generateToken,
+  comparePassword,
   getAdminFromAuthToken,
 };
 
