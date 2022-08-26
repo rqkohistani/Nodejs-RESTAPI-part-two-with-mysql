@@ -20,8 +20,8 @@ const getPostByCustomerId = async (customerId) => {
 };
 
 const createPostByCustomerId = async (customerId, postData) => {
-  const customer = await customerService.getCustomer(customerId);
-  if (customer) {
+  const [customer] = await customerService.getCustomer(customerId);
+  if (customer.length > 0) {
     const query = 'INSERT INTO posts SET ?';
     const newPost = {
       customerId,

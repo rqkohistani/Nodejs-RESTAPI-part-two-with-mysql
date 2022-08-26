@@ -2,8 +2,16 @@
   "user": {
     "routes": [
       "GET/api/v2/customers/",
-      "GET/api/v2/customers/{id}",
-      "POST/api/v2/customers"
+      "GET/api/v2/customers/:id",
+      "POST/api/v2/customers/",
+      "PUT/api/v2/customers/:id",
+      "PATCH/api/v2/customers/:id",
+      "DELETE/api/v2/customers/:id",
+      "GET/api/v2/posts/",
+      "GET/api/v2/posts/:customerId",
+      "POST/api/v2/posts/",
+      "PATCH/api/v2/posts/:postId",
+      "DELETE/api/v2/posts/:postId"
     ]
   },
   "admin": {
