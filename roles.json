@@ -14,7 +14,7 @@
       "DELETE/api/v2/posts/:postId"
     ]
   },
-  "admin": {
+  "guest": {
     "routes": [
       "GET/api/v2/customers/",
       "GET/api/v2/customers/{id}",
@@ -27,7 +27,7 @@
       "patch/api/v2/admins/{id}"
     ]
   },
-  "superAdmin": {
+  "subscribedUsers": {
     "routes": [
       "GET/api/v2/users",
       "GET/api/v2/users/{id}",
