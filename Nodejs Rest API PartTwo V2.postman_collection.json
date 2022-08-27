@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"rashed1@gmail.com\",\r\n    \"password\": \"password\"\r\n    \r\n}",
+							"raw": "   {\r\n    \"email\": \"softhouse@gmail.com\",\r\n    \"password\":\"password\"    \r\n } ",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -24,7 +24,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/v2/login",
+							"raw": "http://localhost:3000/api/v2/auth/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -33,6 +33,7 @@
 							"path": [
 								"api",
 								"v2",
+								"auth",
 								"login"
 							]
 						}
@@ -182,7 +183,7 @@
 					"response": []
 				},
 				{
-					"name": "delete Customer Copy",
+					"name": "delete admin or user",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -245,7 +246,7 @@
 					"response": []
 				},
 				{
-					"name": "getCustomers",
+					"name": "getCustomer",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -478,7 +479,7 @@
 					"response": []
 				},
 				{
-					"name": "update a post by postId and customer reqbody",
+					"name": "update a post by postId and customer id in the body",
 					"request": {
 						"method": "PATCH",
 						"header": [],
@@ -587,18 +588,18 @@
 	"variable": [
 		{
 			"key": "tokenPartTwoV2",
-			"value": "MY TOKEN -> ADMIN - admin1",
-			"type": "string"
-		},
-		{
-			"key": "tokenPartTwoV2",
-			"value": "MY TOKEN -> USER - rashed1",
+			"value": "MY TOKEN -> SUPERADMIN - superAdmin",
 			"type": "string",
 			"disabled": true
 		},
 		{
 			"key": "tokenPartTwoV2",
-			"value": "MY TOKEN -> USER - user1",
+			"value": "MY TOKEN -> ADMIN - admin",
+			"type": "string"
+		},
+		{
+			"key": "tokenPartTwoV2",
+			"value": "MY TOKEN -> USER - user",
 			"type": "string",
 			"disabled": true
 		}
