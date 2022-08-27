@@ -1,5 +1,9 @@
 # A-Secure-Node-js-REST-API-with-mysql
 
+***
+![Save the token](./images/nodejs.PNG)
+***
+
 ## This Nodejs REST API part two is intended to be secure and user-friendly, and it makes use of best API practices
 
 ***
@@ -8,9 +12,6 @@ The APIs could be improve over time to be more secure.
 
 ### Check out [Nodejs-REST-API-part-one uses JSON files for storage](https://github.com/rqkohistani/Build-a-Secure-Nodejs-REST-API-part-one)
 
-***
-![Save the token](./images/nodejs.PNG)
-***
 
 ## Steps to run Node JS REST API part two
 
@@ -39,7 +40,7 @@ Check the database and tables are created and data is inserted.
 
 1. npm install
 2. npm start
-
+3. [Open the browser](http://localhost:3000)
 
 ## 3 Login
 
@@ -167,7 +168,7 @@ Check the database and tables are created and data is inserted.
 
 ***
 
-## Similar techniques are used to implement the rest APIs
+## Similar techniques are used for the rest remaind APIs
 
 You can check them out. You got the idea
 
@@ -303,7 +304,6 @@ You can check them out. You got the idea
 
 ***
 
-
 ### Delete a post by post id and customer id in the body
 
 1. Click on the post/post delete post by post id and customer id in the body route
@@ -314,6 +314,6 @@ You can check them out. You got the idea
 
 ***
 
-### THANK YOU FOR READING THIS DOCUMENTATION. I HOPE YOU ENJOYED IT. PLEASE FEEL FREE TO CONTACT ME IF YOU HAVE ANY QUESTIONS OR SUGGESTIONS. THANK YOU
+### THANK YOU FOR READING THIS DOCUMENTATION. I HOPE YOU ENJOYED IT. Perharps there are some bugs in the code. Please feel free to contact me. THANK YOU
 
 ## [linkedIn](https://www.linkedin.com/in/rashed-qazizada-1b64b68a/)
