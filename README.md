@@ -10,8 +10,9 @@
 
 The APIs could be improve over time to be more secure.
 
-### Check out [Nodejs-REST-API-part-one uses JSON files for storage](https://github.com/rqkohistani/Build-a-Secure-Nodejs-REST-API-part-one)
+## Check out [Nodejs-REST-API-part-one uses JSON files for storage](https://github.com/rqkohistani/Build-a-Secure-Nodejs-REST-API-part-one)
 
+## Chekc out [Nodejs-REST-API-part-two uses **PRISMA** and Azure Data Studio for storage](https://github.com/rqkohistani/a-secure-nodejs-REST-APIs-USING-PRISMA)
 
 ***
 
