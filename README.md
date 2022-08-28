@@ -51,7 +51,7 @@ Check the database and tables are created and data is inserted.
 3. password: password
 4. Expect the response to be 200 and the token to be returned. The token is used in the next steps.
 5. Available admin and users: Use one of the following:
-6. Superadmin and admin they have access to all the APIs. This is how **I want to use the API**. However, reqular users can only access the APIs they have access to. Perhaps more users like guest users can be added with different permissions and some APIs can be restricted and so on.
+6. Superadmin and admin they have access to all the APIs. This is how **I wanted to use the APIs**. However, reqular users can only access the APIs they have access to. Perhaps more users like guest users can be added with different permissions and some APIs can be restricted and so on.
 
 ***
 
@@ -314,6 +314,8 @@ You can check them out. You got the idea
 
 ***
 
-### THANK YOU FOR READING THIS DOCUMENTATION. I HOPE YOU ENJOYED IT. Perharps there are some bugs in the code. Please feel free to contact me. THANK YOU
+### THANK YOU FOR READING THIS DOCUMENTATION. I HOPE YOU ENJOYED IT
+
+Perharps there are some bugs in the code. Please feel free to contact me.
 
 ## [linkedIn](https://www.linkedin.com/in/rashed-qazizada-1b64b68a/)

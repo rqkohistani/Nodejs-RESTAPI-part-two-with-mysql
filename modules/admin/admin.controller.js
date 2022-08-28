@@ -28,8 +28,6 @@ const getAdmin = async (req, res, next) => {
   }
 };
 
-// create create admin route in controller
-
 const createAdmin = async (req, res, next) => {
   try {
     const admin = await adminService.createAdmin(req.body);
@@ -38,8 +36,6 @@ const createAdmin = async (req, res, next) => {
     return next(error);
   }
 };
-
-// create delete admin route in controller
 
 const deleteAdmin = async (req, res, next) => {
   try {
@@ -53,8 +49,6 @@ const deleteAdmin = async (req, res, next) => {
     return next(error);
   }
 };
-
-// create update admin route in controller
 
 const updateAdmin = async (req, res, next) => {
   try {
@@ -79,5 +73,4 @@ const adminController = {
 
 export default adminController;
 
-// export { getAllAdmins, getAdmin, createAdmin, deleteAdmin };
 export { getAllAdmins, getAdmin, createAdmin, deleteAdmin, updateAdmin };
