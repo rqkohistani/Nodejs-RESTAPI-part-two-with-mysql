@@ -79,7 +79,7 @@ Check the database and tables are created and data is inserted.
 * user
 
           {
-          "email": "admin@gmail.com",
+          "email": "user@gmail.com",
           "password": "password"    
            } 
 
