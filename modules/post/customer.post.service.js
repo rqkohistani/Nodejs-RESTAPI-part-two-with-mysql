@@ -1,8 +1,11 @@
 import con from '../../dbConnection';
 import customerService from '../customer/customer.service';
 
-const getAllPosts = async () => {
-  const sql = 'SELECT * FROM posts';
+const getAllPostsOrGetPostById = async (queryParams) => {
+  const { postId } = queryParams;
+
+  const postIdFilter = typeof postId === 'undefined' ? undefined : `WHERE id = ${postId}`;
+  const sql = `SELECT * FROM posts ${postIdFilter}`;
   const [results] = await con.promise().query(sql);
   return results;
 };
@@ -64,7 +67,7 @@ const updatePost = async (customerId, postId, postData) => {
 };
 
 const customerPostService = {
-  getAllPosts,
+  getAllPostsOrGetPostById,
   getPostById,
   getPostByCustomerId,
   createPostByCustomerId,
