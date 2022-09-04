@@ -42,8 +42,9 @@ Check the database and tables are created and data is inserted.
 ## Clone the repo
 
 1. npm install
-2. npm start
-3. [Open the browser](http://localhost:3000)
+1. .env file should be created and filled with the correct values for the database connection. (username, password, host, database). check the .env.example file for more info.
+1. npm start
+1. [Open the browser](http://localhost:3000)
 
 ## 3 Login
 

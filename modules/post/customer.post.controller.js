@@ -1,10 +1,10 @@
 import { HttpError } from '../../errors';
 import customerPostService from './customer.post.service';
 
-const getPostById = async (req, res, next) => {
+const getAllPostsOrGetPostById = async (req, res, next) => {
   try {
-    const postId = parseInt(req.query.postId, 10);
-    const [post] = await customerPostService.getPostById(postId);
+    const { postId } = req.query;
+    const post = await customerPostService.getAllPostsOrGetPostById({ postId });
     if (!post) throw new HttpError(404, 'Post not found');
     res.status(200).json(post);
   } catch (error) {
@@ -60,7 +60,7 @@ const updatePost = async (req, res, next) => {
 };
 
 const customerPostController = {
-  getPostById,
+  getAllPostsOrGetPostById,
   getPostByCustomerId,
   createPostByCustomerId,
   deletePost,
@@ -69,4 +69,4 @@ const customerPostController = {
 
 export default customerPostController;
 
-export { getPostById, getPostByCustomerId, createPostByCustomerId, deletePost, updatePost };
+export { getAllPostsOrGetPostById, getPostByCustomerId, createPostByCustomerId, deletePost, updatePost };
