@@ -1,9 +1,5 @@
 # A-Secure-Node-js-REST-API-with-mysql
 
-***
-![Save the token](./images/nodejs.PNG)
-***
-
 ## This Nodejs REST API part two is intended to be secure and user-friendly, and it makes use of best API practices
 
 ***
